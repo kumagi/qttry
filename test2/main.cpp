@@ -1,17 +1,21 @@
 #include <QApplication>
 #include <QDialog>
 
-#include "test2.h"
+#include "care_plan_dialog.hpp"
 
-#include <boost/scoped_ptr.hpp>
+
+
+//#include <boost/scoped_ptr.hpp>
+
 
 int main(int argc, char *argv[])
 {
 	QApplication app(argc, argv);
+	care_plan_dialog cpd;
 
-	window care_manage;
 	//IconEditor ic;
-	care_manage.show();
+	cpd.show();
+	cpd.human_widget->show();
 //	ic.show();
 
 	return app.exec();
