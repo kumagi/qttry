@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'one_human.ui'
 **
-** Created: Tue Dec 21 05:58:23 2010
+** Created: Tue Dec 21 14:04:31 2010
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -124,6 +124,11 @@ public:
 
         name_edit = new QLineEdit(gridLayoutWidget_2);
         name_edit->setObjectName(QString::fromUtf8("name_edit"));
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(name_edit->sizePolicy().hasHeightForWidth());
+        name_edit->setSizePolicy(sizePolicy);
 
         gridLayout_2->addWidget(name_edit, 0, 1, 1, 1);
 
@@ -195,6 +200,16 @@ public:
         frame->setGeometry(QRect(0, 0, 641, 481));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
+        frame->raise();
+        pushButton->raise();
+        pushButton_2->raise();
+        FacePanel->raise();
+        horizontalLayoutWidget->raise();
+        horizontalLayoutWidget_2->raise();
+        gridLayoutWidget_2->raise();
+        horizontalLayoutWidget_3->raise();
+        horizontalLayoutWidget_4->raise();
+        schedule_widget->raise();
 
         retranslateUi(one_human);
 

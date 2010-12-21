@@ -9,17 +9,23 @@
 #include <boost/array.hpp>
 #include "ui_one_service.h"
 
+#include <Qt>
+#include <QMouseEvent>
+
 class one_service : public QWidget, public Ui::one_service {
 	Q_OBJECT;
 	
-public:
+public: 
 	one_service(QWidget* parent = 0);
-
+	QSize sizeHint()const{
+		const QSize size(600,40);
+		return size;
+	}
 protected:
-	void mousePressEvent(QMouseEvent* event);
-	void mouseDoubleClickEvent(QMouseEvent* event);
-	void mouseMoveEvent(QMouseEvent* event){}
-	void paintEvent(QPaintEvent* event);
+	virtual void mousePressEvent(QMouseEvent* event);
+	virtual void mouseDoubleClickEvent(QMouseEvent* event);
+	virtual void mouseMoveEvent(QMouseEvent* event);
+	virtual void paintEvent(QPaintEvent* event);
 private:
 	QString time;
 	QString name;

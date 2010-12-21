@@ -6,7 +6,9 @@ class services : public Ui::care_plan_widget, public QWidget{
 public:
 	services(QWidget* parent = 0):QWidget(parent){
 		setupUi(this);
-		service_area->setWidget(new one_service(this));
+		one_service* first_service = new one_service(this);
+		service_area->setWidget(first_service);
+		first_service->setParent(service_area);
 	}
 };
 #endif

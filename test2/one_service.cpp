@@ -1,8 +1,7 @@
-
-
 #include "one_service.hpp"
 #include <iostream>
 #include <QtGui>
+
 #include <boost/lexical_cast.hpp>
 
 one_service::one_service(QWidget* parent):QWidget(parent){
@@ -11,12 +10,15 @@ one_service::one_service(QWidget* parent):QWidget(parent){
 	schedule_image_plan.fill(qRgba(255,255,255,255));
 	schedule_image_done = QImage(400,15,QImage::Format_ARGB32);
 	schedule_image_done.fill(qRgba(255,192,192,255));
+	
 }
 
 static const QPoint image_begin(208,0);
 static const QPoint image_begin2(208,15);
 static const int x_offset = 230;
 void one_service::paintEvent(QPaintEvent* event){
+	std::cout <<  "painted\n";
+
 	const QColor plan = Qt::white;
 	const QColor done = Qt::lightGray;
 
@@ -49,11 +51,15 @@ void one_service::paintEvent(QPaintEvent* event){
 	}
 }
 
-void one_service::mousePressEvent(QMouseEvent* event){
-	std::cout << "clicked\n";
+void one_service::mousePressEvent(QMouseEvent* const event){
+	if(event->buttons() & Qt::LeftButton){
+		std::cout << "clicked\n";
+	}
 }
-
-void one_service::mouseDoubleClickEvent(QMouseEvent* event){
+void one_service::mouseMoveEvent(QMouseEvent* const event){
+	std::cout << "mouse_move:" << event->pos().x();
+}
+void one_service::mouseDoubleClickEvent(QMouseEvent* const event){
 	const QPoint& clicked = event->pos();
 	std::cout << "double clicked\n";
 	if(x_offset < clicked.x()){
@@ -67,6 +73,6 @@ void one_service::mouseDoubleClickEvent(QMouseEvent* event){
 				if(target > 2){target = 0;}
 			}
 	}
-	
-	
+	update();
+	updateGeometry();
 }
