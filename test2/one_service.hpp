@@ -7,12 +7,11 @@
 #include <QWidget>
 #include <QPoint>
 #include <boost/array.hpp>
-#include "ui_one_service.h"
 
 #include <Qt>
 #include <QMouseEvent>
 
-class one_service : public QWidget, public Ui::one_service {
+class one_service : public QWidget {
 	Q_OBJECT;
 	
 public: 

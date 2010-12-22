@@ -158,6 +158,15 @@
     <enum>QFrame::Raised</enum>
    </property>
   </widget>
+  <zorder>frame</zorder>
+  <zorder>service_name</zorder>
+  <zorder>provider</zorder>
+  <zorder>time</zorder>
+  <zorder>line_2</zorder>
+  <zorder>line_1</zorder>
+  <zorder>service_area</zorder>
+  <zorder>line_3</zorder>
+  <zorder>line_4</zorder>
  </widget>
  <resources/>
  <connections/>
